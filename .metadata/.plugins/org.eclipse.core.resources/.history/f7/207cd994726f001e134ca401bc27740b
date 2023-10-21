@@ -1,0 +1,5 @@
+package com.invento.service;
+
+public interface ProductService {
+
+}

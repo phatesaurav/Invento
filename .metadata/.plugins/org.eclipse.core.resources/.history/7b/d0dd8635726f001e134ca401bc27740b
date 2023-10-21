@@ -1,0 +1,5 @@
+package com.invento.entity;
+
+public class Product {
+
+}
