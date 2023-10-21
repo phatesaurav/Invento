@@ -8,11 +8,12 @@
 		<version>2.7.17</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>com.invento</groupId>
 	<artifactId>invento</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>Invento</name>
-	<description>Demo project for Spring Boot</description>
+	<name>invento-backend</name>
+	<description>Inventory Management System</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

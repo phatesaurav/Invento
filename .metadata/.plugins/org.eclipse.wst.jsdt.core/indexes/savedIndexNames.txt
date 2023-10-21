@@ -1,2 +1,2 @@
-INDEX VERSION 1.4+D:\Invento\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+INDEX VERSION 1.4+D:\GitHub\Invento\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
 1409996732.index
