@@ -22,7 +22,7 @@ import com.invento.service.ProductServiceImpl;
 // @RestController is the combination of @Controller and @ResponseBody
 // @ResponseBody used for serialization (Java object to JSON object)
 @RestController
-@CrossOrigin(origins = {"http://localhost:3000", "https://invento-six.vercel.app"}) // Cross-Origin Resource Sharing (CORS) issue
+@CrossOrigin(origins = {"http://localhost:3000", "https://invento-in.vercel.app"}) // Cross-Origin Resource Sharing (CORS) issue
 public class ProductController {
 
 	@Autowired // Inject 'ProductService' in 'ProductController' using @Autowirted annotation
