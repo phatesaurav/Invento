@@ -533,3 +533,173 @@ Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.jst.jsp.co
 
 !ENTRY org.eclipse.wst.validation 4 0 2023-10-21 23:33:27.690
 !MESSAGE IWAE0100E Extension configuration error. An internal error has happened, the validator org.eclipse.jst.jsp.core has incorrectly configured the validation extension point.
+
+!ENTRY org.eclipse.wst.validation 4 0 2023-10-21 23:33:43.954
+!MESSAGE Plug-in "org.eclipse.wst.jsdt.core" was unable to instantiate class "org.eclipse.wst.jsdt.internal.core.validation.JavaScriptValidator".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in "org.eclipse.wst.jsdt.core" was unable to instantiate class "org.eclipse.wst.jsdt.internal.core.validation.JavaScriptValidator".
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:206)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1062)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1015)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1304)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	... 12 more
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.wst.jsdt.core.JavaScriptCore.getOptions(JavaScriptCore.java:2478)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.initializeDefaults(ASTParser.java:232)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.<init>(ASTParser.java:215)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.newParser(ASTParser.java:114)
+	at org.eclipse.wst.jsdt.internal.core.validation.JavaScriptValidator.<init>(JavaScriptValidator.java:43)
+	... 18 more
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.core.runtime.Plugin.getStateLocation()" because the return value of "org.eclipse.wst.jsdt.core.JavaScriptCore.getPlugin()" is null
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.getJavaPluginWorkingLocation(IndexManager.java:305)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.getSavedIndexesDirectory(IndexManager.java:320)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.<init>(IndexManager.java:72)
+	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.<init>(JavaModelManager.java:1331)
+	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.<clinit>(JavaModelManager.java:992)
+	... 23 more
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2023-10-21 23:33:43.954
+!MESSAGE Plug-in "org.eclipse.wst.jsdt.core" was unable to instantiate class "org.eclipse.wst.jsdt.internal.core.validation.JavaScriptValidator".
+!STACK 0
+java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1062)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1015)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1304)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.wst.jsdt.core.JavaScriptCore.getOptions(JavaScriptCore.java:2478)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.initializeDefaults(ASTParser.java:232)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.<init>(ASTParser.java:215)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.newParser(ASTParser.java:114)
+	at org.eclipse.wst.jsdt.internal.core.validation.JavaScriptValidator.<init>(JavaScriptValidator.java:43)
+	... 18 more
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.core.runtime.Plugin.getStateLocation()" because the return value of "org.eclipse.wst.jsdt.core.JavaScriptCore.getPlugin()" is null
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.getJavaPluginWorkingLocation(IndexManager.java:305)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.getSavedIndexesDirectory(IndexManager.java:320)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.<init>(IndexManager.java:72)
+	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.<init>(JavaModelManager.java:1331)
+	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.<clinit>(JavaModelManager.java:992)
+	... 23 more
+Root exception:
+java.lang.ExceptionInInitializerError
+	at org.eclipse.wst.jsdt.core.JavaScriptCore.getOptions(JavaScriptCore.java:2478)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.initializeDefaults(ASTParser.java:232)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.<init>(ASTParser.java:215)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.newParser(ASTParser.java:114)
+	at org.eclipse.wst.jsdt.internal.core.validation.JavaScriptValidator.<init>(JavaScriptValidator.java:43)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1062)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1015)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1304)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.core.runtime.Plugin.getStateLocation()" because the return value of "org.eclipse.wst.jsdt.core.JavaScriptCore.getPlugin()" is null
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.getJavaPluginWorkingLocation(IndexManager.java:305)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.getSavedIndexesDirectory(IndexManager.java:320)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.<init>(IndexManager.java:72)
+	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.<init>(JavaModelManager.java:1331)
+	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.<clinit>(JavaModelManager.java:992)
+	... 23 more
+
+!ENTRY org.eclipse.wst.validation 4 0 2023-10-21 23:33:43.956
+!MESSAGE IWAE0100E Extension configuration error. An internal error has happened, the validator org.eclipse.wst.jsdt.core has incorrectly configured the validation extension point.
+
+!ENTRY org.eclipse.wst.validation 4 0 2023-10-21 23:33:44.514
+!MESSAGE Plug-in "org.eclipse.jst.jsp.core" was unable to instantiate class "org.eclipse.jst.jsp.core.internal.validation.TLDValidator".
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in "org.eclipse.jst.jsp.core" was unable to instantiate class "org.eclipse.jst.jsp.core.internal.validation.TLDValidator".
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:206)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1062)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1015)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1304)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.ExceptionInInitializerError
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	... 12 more
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.jst.jsp.core.internal.JSPCorePlugin.getBundle()" because the return value of "org.eclipse.jst.jsp.core.internal.JSPCorePlugin.getDefault()" is null
+	at org.eclipse.jst.jsp.core.internal.validation.TLDValidator.<clinit>(TLDValidator.java:70)
+	... 18 more
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2023-10-21 23:33:44.514
+!MESSAGE Plug-in "org.eclipse.jst.jsp.core" was unable to instantiate class "org.eclipse.jst.jsp.core.internal.validation.TLDValidator".
+!STACK 0
+java.lang.ExceptionInInitializerError
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1062)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1015)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1304)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.lang.NullPointerException: Cannot invoke "org.eclipse.jst.jsp.core.internal.JSPCorePlugin.getBundle()" because the return value of "org.eclipse.jst.jsp.core.internal.JSPCorePlugin.getDefault()" is null
+	at org.eclipse.jst.jsp.core.internal.validation.TLDValidator.<clinit>(TLDValidator.java:70)
+	... 18 more
+
+!ENTRY org.eclipse.wst.validation 4 0 2023-10-21 23:33:44.515
+!MESSAGE IWAE0100E Extension configuration error. An internal error has happened, the validator org.eclipse.jst.jsp.core has incorrectly configured the validation extension point.
