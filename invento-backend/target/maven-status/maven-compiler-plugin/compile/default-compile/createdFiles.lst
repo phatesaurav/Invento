@@ -1,0 +1,7 @@
+com\invento\InventoBackendApplication.class
+com\invento\ServletInitializer.class
+com\invento\controller\ProductController.class
+com\invento\repository\ProductRepository.class
+com\invento\entity\Product.class
+com\invento\service\ProductServiceImpl.class
+com\invento\service\ProductService.class
