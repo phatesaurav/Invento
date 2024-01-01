@@ -20,14 +20,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor // Generates a constructor that takes in all fields in the class as arguments
 @NoArgsConstructor // Generates a no-args constructor
 @Entity // As this Product is our 'Model' name i.e. 'Entity' class
-@Table(name = "product") // If you will not specify the table name JPA is smart enough,
-								// It can create table name with the class name
+@Table(name = "product") // If you will not specify the table name JPA is smart enough, // It can create table name with the class name
 public class Product {
 
-	@Id // Specify the primary key
-		// If you want to change the column name, you can add @Column
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // To auto generate id //This is generator given by the
-														// hibernate
+	@Id // Specify the primary key, If you want to change the column name, you can add @Column
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // To auto generate id //This is generator given by the hibernate
 	private int id;
 	private String name;
 	private int quantity;
